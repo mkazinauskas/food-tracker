@@ -1,3 +1,5 @@
+![Build flutter app](https://github.com/mkazinauskas/food-tracker-mobile/workflows/Build%20flutter%20app/badge.svg)
+
 # Food Tracker & Diary Mobile
 
 Flutter application for tracking food daily with photos and comments
