@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:foodtracker/main.dart';
@@ -15,11 +16,13 @@ class AddNewScreen extends StatefulWidget {
 
 class _AddNewScreenState extends State<AddNewScreen> {
   bool _photoTaken = false;
+  String _imagePath = '';
   bool _descriptionAdded = false;
 
-  void _onTakePhoto () {
+  void _onTakePhoto (@required imagePath) {
     setState(() {
       _photoTaken = true;
+      _imagePath = imagePath;
     });
   }
 
@@ -36,6 +39,7 @@ class _AddNewScreenState extends State<AddNewScreen> {
             child: Column(
               children: [
                 Text('Add New screen'),
+                Image.file(File(_imagePath))
               ],
             )),
         bottomNavigationBar: NavigationBar(currentScreen: Routes.ADD_NEW),

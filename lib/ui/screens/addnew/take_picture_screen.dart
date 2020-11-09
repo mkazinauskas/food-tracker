@@ -85,12 +85,17 @@ class TakePictureScreenState extends State<TakePictureScreen> {
               '${DateTime.now()}.png',
             );
 
+            try {
             // Attempt to take a picture and log where it's been saved.
             await _controller.takePicture(path);
+            } catch (e){
+              print(e);
+            }
+            widget.callback(path);
           } catch (e) {
             print(e);
           }
-          widget.callback();
+
         },
       ),
     );
