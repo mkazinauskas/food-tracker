@@ -23,6 +23,7 @@ environment:
 dependencies:
   camera:
   path_provider: 1.6.24
+  date_field: 0.3.2
   flutter:
     sdk: flutter
 
