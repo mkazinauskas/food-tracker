@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:foodtracker/ui/screens/addnew/add_new_screen.dart';
 import 'package:foodtracker/ui/screens/addnew/photo_preview.dart';
 import 'package:foodtracker/ui/screens/diary_screen.dart';
-import 'package:foodtracker/ui/screens/info_screen.dart';
+import 'package:foodtracker/ui/screens/settings_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,7 +14,6 @@ void main() async {
 }
 
 class FoodTrackerApp extends StatelessWidget {
-
   final CameraDescription _cameraDescription;
 
   FoodTrackerApp(@required this._cameraDescription);
@@ -26,21 +25,19 @@ class FoodTrackerApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      initialRoute: Routes.DIARY,
+      initialRoute: DiaryScreen.ROUTE_NAME,
       routes: {
         // When navigating to the "/" route, build the FirstScreen widget.
-        Routes.DIARY: (context) => DiaryScreen(),
-        Routes.ADD_NEW: (context) => AddNewScreen(firstCamera: _cameraDescription),
-        Routes.INFO: (context) => InfoScreen(),
-        Routes.ADD_NEW_PHOTO_PREVIEW: (context) => PhotoPreview()
+        DiaryScreen.ROUTE_NAME: (context) => DiaryScreen(),
+        AddNewScreen.ROUTE_NAME: (context) =>
+            AddNewScreen(firstCamera: _cameraDescription),
+        SettingsScreen.ROUTE_NAME: (context) => SettingsScreen(),
+        PhotoPreview.ROUTE_NAME: (context) => PhotoPreview()
       },
     );
   }
 }
 
 class Routes {
-  static const String DIARY = '/diary';
-  static const String ADD_NEW = '/add-new';
-  static const String ADD_NEW_PHOTO_PREVIEW = '/add-new/photo-preview';
   static const String INFO = '/info';
 }

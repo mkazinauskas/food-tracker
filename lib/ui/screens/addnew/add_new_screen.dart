@@ -3,7 +3,6 @@ import 'package:camera/camera.dart';
 import 'package:date_field/date_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:foodtracker/main.dart';
 import 'package:foodtracker/ui/navigation_bar.dart';
 import 'package:foodtracker/ui/screens/addnew/photo_preview.dart';
 import 'package:foodtracker/ui/screens/addnew/take_picture_screen.dart';
@@ -18,6 +17,8 @@ const List<String> _WHY_DID_YOU_EAT_OPTIONS = [
 ];
 
 class AddNewScreen extends StatefulWidget {
+  static const String ROUTE_NAME = '/add-new';
+
   final CameraDescription firstCamera;
 
   AddNewScreen({Key key, @required this.firstCamera}) : super(key: key);
@@ -71,7 +72,7 @@ class _AddNewScreenState extends State<AddNewScreen> {
           },
         ),
       ),
-      bottomNavigationBar: NavigationBar(currentScreen: Routes.ADD_NEW),
+      bottomNavigationBar: NavigationBar(currentScreen: AddNewScreen.ROUTE_NAME),
     );
   }
 
@@ -95,7 +96,7 @@ class _AddNewScreenState extends State<AddNewScreen> {
                   tooltip: 'View photo',
                   icon: Icons.zoom_in,
                   onPressed: () {
-                    Navigator.pushNamed(context, Routes.ADD_NEW_PHOTO_PREVIEW,
+                    Navigator.pushNamed(context, PhotoPreview.ROUTE_NAME,
                         arguments: PreviewablePhoto(_imagePath));
                   }),
               ClipRRect(

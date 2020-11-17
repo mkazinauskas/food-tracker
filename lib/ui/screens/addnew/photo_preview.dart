@@ -4,6 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class PhotoPreview extends StatelessWidget {
+
+  static const String ROUTE_NAME = '/add-new/photo-preview';
+
   PhotoPreview({Key key}) : super(key: key);
 
   @override

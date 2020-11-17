@@ -1,6 +1,7 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:foodtracker/main.dart';
+import 'package:foodtracker/ui/screens/addnew/add_new_screen.dart';
 import 'package:path/path.dart';
 import 'package:foodtracker/ui/navigation_bar.dart';
 import 'package:path_provider/path_provider.dart';
@@ -67,7 +68,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
           }
         },
       ),
-      bottomNavigationBar: NavigationBar(currentScreen: Routes.ADD_NEW),
+      bottomNavigationBar: NavigationBar(currentScreen: AddNewScreen.ROUTE_NAME),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.camera_alt),
         // Provide an onPressed callback.

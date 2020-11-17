@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:foodtracker/main.dart';
 import 'package:foodtracker/ui/navigation_bar.dart';
 
 class DiaryScreen extends StatefulWidget {
+  static const String ROUTE_NAME = '/diary';
+
   DiaryScreen({Key key}) : super(key: key);
 
   @override
@@ -17,7 +18,7 @@ class _DiaryScreenState extends State<DiaryScreen> {
         title: const Text('My diary'),
       ),
       body: Center(child: Text('Diary screen')),
-      bottomNavigationBar: NavigationBar(currentScreen: Routes.DIARY),
+      bottomNavigationBar: NavigationBar(currentScreen: DiaryScreen.ROUTE_NAME),
     );
   }
 }
