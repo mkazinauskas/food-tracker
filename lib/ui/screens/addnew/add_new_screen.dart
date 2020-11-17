@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:foodtracker/main.dart';
 import 'package:foodtracker/ui/navigation_bar.dart';
+import 'package:foodtracker/ui/screens/addnew/photo_preview.dart';
 import 'package:foodtracker/ui/screens/addnew/take_picture_screen.dart';
 
 const double _DEFAULT_FIELD_PADDING = 15.0;
@@ -94,7 +95,8 @@ class _AddNewScreenState extends State<AddNewScreen> {
                   tooltip: 'View photo',
                   icon: Icons.zoom_in,
                   onPressed: () {
-                    setState(() {});
+                    Navigator.pushNamed(context, Routes.ADD_NEW_PHOTO_PREVIEW,
+                        arguments: PreviewablePhoto(_imagePath));
                   }),
               ClipRRect(
                 borderRadius: BorderRadius.circular(10.0),

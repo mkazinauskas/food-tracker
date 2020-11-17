@@ -1,6 +1,7 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:foodtracker/ui/screens/addnew/add_new_screen.dart';
+import 'package:foodtracker/ui/screens/addnew/photo_preview.dart';
 import 'package:foodtracker/ui/screens/diary_screen.dart';
 import 'package:foodtracker/ui/screens/info_screen.dart';
 
@@ -31,6 +32,7 @@ class FoodTrackerApp extends StatelessWidget {
         Routes.DIARY: (context) => DiaryScreen(),
         Routes.ADD_NEW: (context) => AddNewScreen(firstCamera: _cameraDescription),
         Routes.INFO: (context) => InfoScreen(),
+        Routes.ADD_NEW_PHOTO_PREVIEW: (context) => PhotoPreview()
       },
     );
   }
@@ -39,5 +41,6 @@ class FoodTrackerApp extends StatelessWidget {
 class Routes {
   static const String DIARY = '/diary';
   static const String ADD_NEW = '/add-new';
+  static const String ADD_NEW_PHOTO_PREVIEW = '/add-new/photo-preview';
   static const String INFO = '/info';
 }
