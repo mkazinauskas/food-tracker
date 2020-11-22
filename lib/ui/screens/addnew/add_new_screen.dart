@@ -19,9 +19,7 @@ const List<String> _WHY_DID_YOU_EAT_OPTIONS = [
 class AddNewScreen extends StatefulWidget {
   static const String ROUTE_NAME = '/add-new';
 
-  final CameraDescription firstCamera;
-
-  AddNewScreen({Key key, @required this.firstCamera}) : super(key: key);
+  AddNewScreen({Key key}) : super(key: key);
 
   @override
   _AddNewScreenState createState() => _AddNewScreenState();
@@ -43,8 +41,7 @@ class _AddNewScreenState extends State<AddNewScreen> {
   @override
   Widget build(BuildContext context) {
     if (!_photoTaken) {
-      return TakePictureScreen(
-          camera: widget.firstCamera, callback: _onTakePhoto);
+      return TakePictureScreen(callback: _onTakePhoto);
     }
     return Scaffold(
       floatingActionButton: FloatingActionButton(

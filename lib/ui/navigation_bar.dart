@@ -30,7 +30,7 @@ class _NavigationBarState extends State<NavigationBar> {
           label: 'Diary',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.add, size: 40),
+          icon: Icon(Icons.add_circle_outline, size: 40),
           label: 'Add New',
         ),
         BottomNavigationBarItem(

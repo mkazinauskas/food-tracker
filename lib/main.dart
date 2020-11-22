@@ -6,17 +6,10 @@ import 'package:foodtracker/ui/screens/diary_screen.dart';
 import 'package:foodtracker/ui/screens/settings_screen.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  final cameras = await availableCameras();
-  final firstCamera = cameras.first;
-
-  runApp(FoodTrackerApp(firstCamera));
+  runApp(FoodTrackerApp());
 }
 
 class FoodTrackerApp extends StatelessWidget {
-  final CameraDescription _cameraDescription;
-
-  FoodTrackerApp(@required this._cameraDescription);
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +23,7 @@ class FoodTrackerApp extends StatelessWidget {
         // When navigating to the "/" route, build the FirstScreen widget.
         DiaryScreen.ROUTE_NAME: (context) => DiaryScreen(),
         AddNewScreen.ROUTE_NAME: (context) =>
-            AddNewScreen(firstCamera: _cameraDescription),
+            AddNewScreen(),
         SettingsScreen.ROUTE_NAME: (context) => SettingsScreen(),
         PhotoPreview.ROUTE_NAME: (context) => PhotoPreview()
       },
