@@ -9,6 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:foodtracker/main.dart';
+import 'package:foodtracker/ui/screens/settings_screen.dart';
 
 void main() {
   testWidgets('Diary is default screen test', (WidgetTester tester) async {
@@ -29,18 +30,9 @@ void main() {
   testWidgets('Add New screen exists test', (WidgetTester tester) async {
     await tester.pumpWidget(FoodTrackerApp());
 
-    await tester.tap(find.byIcon(Icons.add));
+    await tester.tap(find.byIcon(Icons.add_circle_outline));
     await tester.pump();
 
     expect(find.text('Add New screen'), findsOneWidget);
-  });
-
-  testWidgets('Info screen exists test', (WidgetTester tester) async {
-    await tester.pumpWidget(FoodTrackerApp());
-
-    await tester.tap(find.byIcon(Icons.info));
-    await tester.pump();
-
-    expect(find.text('Info screen'), findsOneWidget);
   });
 }
