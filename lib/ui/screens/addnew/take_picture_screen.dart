@@ -2,13 +2,15 @@ import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:foodtracker/ui/navigation_bar.dart';
 import 'package:foodtracker/ui/screens/addnew/add_new_screen.dart';
+import 'package:foodtracker/ui/screens/addnew/photo_path.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 
 class TakePictureScreen extends StatefulWidget {
-  final dynamic callback;
 
-  TakePictureScreen({Key key, @required this.callback}) : super(key: key);
+  static const String ROUTE_NAME = '/add-new/take-picture';
+
+  TakePictureScreen({Key key}) : super(key: key);
 
   @override
   TakePictureScreenState createState() => TakePictureScreenState();
@@ -74,7 +76,7 @@ class TakePictureScreenState extends State<TakePictureScreen> {
             } catch (e) {
               print(e);
             }
-            widget.callback(path);
+            Navigator.pop(context, PhotoPath(path));
           } catch (e) {
             print(e);
           }

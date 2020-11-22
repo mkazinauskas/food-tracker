@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:foodtracker/ui/screens/addnew/photo_path.dart';
 
 class PhotoPreview extends StatelessWidget {
 
@@ -11,7 +12,7 @@ class PhotoPreview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    PreviewablePhoto photo = ModalRoute.of(context).settings.arguments;
+    PhotoPath photo = ModalRoute.of(context).settings.arguments;
 
     return Scaffold(
       appBar: AppBar(
@@ -26,10 +27,4 @@ class PhotoPreview extends StatelessWidget {
       ),
     );
   }
-}
-
-class PreviewablePhoto {
-  final String path;
-
-  PreviewablePhoto(@required this.path);
 }
