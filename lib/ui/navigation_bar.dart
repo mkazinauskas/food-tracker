@@ -5,7 +5,6 @@ import 'package:foodtracker/ui/screens/diary_screen.dart';
 import 'package:foodtracker/ui/screens/settings_screen.dart';
 
 class NavigationBar extends StatefulWidget {
-
   final String currentScreen;
 
   NavigationBar({Key key, @required this.currentScreen}) : super(key: key);
@@ -15,10 +14,15 @@ class NavigationBar extends StatefulWidget {
 }
 
 class _NavigationBarState extends State<NavigationBar> {
-  List<String> _routes = [DiaryScreen.ROUTE_NAME, AddNewScreen.ROUTE_NAME, SettingsScreen.ROUTE_NAME];
+  List<String> _routes = [
+    DiaryScreen.ROUTE_NAME,
+    AddNewScreen.ROUTE_NAME,
+    SettingsScreen.ROUTE_NAME
+  ];
 
   void _onItemTapped(int index) {
-    Navigator.pushReplacementNamed(context, _routes.elementAt(index));
+    Navigator.pushNamedAndRemoveUntil(
+        context, _routes.elementAt(index), ModalRoute.withName('/'));
   }
 
   @override
