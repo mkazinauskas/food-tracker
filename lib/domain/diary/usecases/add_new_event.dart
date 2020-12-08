@@ -2,7 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:foodtracker/domain/diary/entities/diary_entry.dart';
-import 'package:foodtracker/domain/diary_entries_repository.dart';
+import 'package:foodtracker/domain/diary/diary_entries_repository.dart';
 import 'package:foodtracker/domain/failures.dart';
 import 'package:foodtracker/domain/usecase.dart';
 
@@ -13,7 +13,7 @@ class AddNewEvent extends UseCase<DiaryEntry, AddNewEventParams> {
   AddNewEvent(this._diaryEntriesRepository);
 
   @override
-  Future<Either<Failure, DiaryEntry>> call(AddNewEventParams params) async {
+  Future<Either<Failure, DiaryEntry>> execute(AddNewEventParams params) async {
     DiaryEntry entry = DiaryEntry(
       photo: params.photo,
       dateTime: params.dateTime,

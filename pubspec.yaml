@@ -26,6 +26,7 @@ dependencies:
   equatable: ^1.2.5
   path_provider: 1.6.24
   date_field: 0.3.2
+  mockito:
   flutter:
     sdk: flutter
 
@@ -37,6 +38,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  mockito: ^4.1.3
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
